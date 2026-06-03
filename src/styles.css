@@ -150,5 +150,28 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .bg-surface-dark { background-color: var(--surface-dark); color: var(--surface-dark-foreground); }
+  .text-surface-dark { color: var(--surface-dark); }
+  .bg-gradient-hero { background-image: var(--gradient-hero); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .glass { background: color-mix(in oklab, var(--card) 65%, transparent); backdrop-filter: blur(14px); }
+  .glass-dark { background: color-mix(in oklab, var(--surface-dark) 55%, transparent); backdrop-filter: blur(14px); }
+  .grain {
+    background-image: radial-gradient(oklch(0.22 0.04 155 / 0.08) 1px, transparent 1px);
+    background-size: 3px 3px;
   }
 }
