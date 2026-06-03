@@ -58,7 +58,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#contact"
+            href="/"
             className="inline-flex items-center gap-2 rounded-full bg-surface-dark px-4 py-2 text-sm text-[color:var(--surface-dark-foreground)] hover:opacity-90 transition"
           >
             <Download className="h-4 w-4" /> Download CV
