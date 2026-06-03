@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Karim Ibrahim — Sales, Marketing & Business Development" },
       { name: "description", content: "Portfolio of Karim Ibrahim Khalil — Sales, Marketing & Business Development Specialist based in Cairo, Egypt." },
       { name: "author", content: "Karim Ibrahim" },
-      { property: "og:title", content: "Karim Ibrahim — Portfolio" },
-      { property: "og:description", content: "Sales, Marketing & Business Development Specialist." },
+      { property: "og:title", content: "Karim Ibrahim — Sales, Marketing & Business Development" },
+      { property: "og:description", content: "Portfolio of Karim Ibrahim Khalil — Sales, Marketing & Business Development Specialist based in Cairo, Egypt." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@karim" },
+      { name: "twitter:title", content: "Karim Ibrahim — Sales, Marketing & Business Development" },
+      { name: "twitter:description", content: "Portfolio of Karim Ibrahim Khalil — Sales, Marketing & Business Development Specialist based in Cairo, Egypt." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d34cb14a-6542-4142-b97d-8797a2ddd849/id-preview-40f10322--22bc01ac-7353-4e8b-ad5d-2ae81028687f.lovable.app-1780476583982.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d34cb14a-6542-4142-b97d-8797a2ddd849/id-preview-40f10322--22bc01ac-7353-4e8b-ad5d-2ae81028687f.lovable.app-1780476583982.png" },
     ],
     links: [
       {
