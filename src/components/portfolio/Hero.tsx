@@ -1,6 +1,27 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Sparkles } from "lucide-react";
 import { Counter } from "./Counter";
+import medrar from "@/assets/brands/medrar.png";
+import xdot from "@/assets/brands/xdot.png";
+import nawplast from "@/assets/brands/nawplast.png";
+import mazaq from "@/assets/brands/mazaq.png";
+import cup from "@/assets/brands/cup.png";
+import fashion from "@/assets/brands/fashion.png";
+import arqam from "@/assets/brands/arqam.png";
+import rokia from "@/assets/brands/rokia.png";
+import traffic from "@/assets/brands/traffic.png";
+
+const BRANDS = [
+  { src: medrar, name: "Medrar" },
+  { src: xdot, name: "X.Dot Agency" },
+  { src: nawplast, name: "Naw Plast" },
+  { src: mazaq, name: "Mazaq Al Lahm" },
+  { src: cup, name: "Cup Brand" },
+  { src: fashion, name: "Fashion Avenue" },
+  { src: arqam, name: "Arqam FC" },
+  { src: rokia, name: "Rokia Group" },
+  { src: traffic, name: "Traffic Marker" },
+];
 
 export function Hero() {
   return (
@@ -70,31 +91,51 @@ export function Hero() {
           >
             <Stat value={10} suffix="+" label="Roles across sales, PR & marketing" />
             <Stat value={8} suffix="+" label="Brands grown and supported" />
-            <Stat value={3.75} suffix="" label="University GPA" decimals />
+            <Stat value={3.75} suffix="" label="University GPA" decimals={2} />
             <Stat value={22} suffix="" label="Years young, fully driven" />
           </motion.div>
         </div>
       </div>
 
-      <div className="mt-20 border-y border-border/70 bg-card/40">
-        <div className="mx-auto max-w-6xl px-5 py-5 flex items-center gap-10 overflow-x-auto text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          {["Medrar", "X.Dot Agency", "Naw Plast", "Mazaq Al Lahm", "Cup Brand", "Fashion Avenue", "Arqam FC", "Rokia Group", "Traffic Marker"].map(
-            (b) => (
-              <span key={b} className="whitespace-nowrap">{b}</span>
-            )
-          )}
+      <div className="mt-20 border-y border-border/70 bg-card/40 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-5 py-8">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground/70 mb-5 text-center">
+            Trusted across — Brands I've supported
+          </p>
+          <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="flex gap-16 animate-marquee whitespace-nowrap will-change-transform">
+              {[...BRANDS, ...BRANDS].map((b, i) => (
+                <img
+                  key={`${b.name}-${i}`}
+                  src={b.src}
+                  alt={`${b.name} logo`}
+                  loading="lazy"
+                  className="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 shrink-0"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function Stat({ value, suffix, label, decimals }: { value: number; suffix: string; label: string; decimals?: boolean }) {
+function Stat({
+  value,
+  suffix,
+  label,
+  decimals = 0,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+  decimals?: number;
+}) {
   return (
     <div className="rounded-2xl border border-border bg-card/70 p-5 shadow-card">
       <div className="font-display text-3xl md:text-4xl">
-        {decimals ? value.toFixed(2) : <Counter to={value} suffix={suffix} />}
-        {decimals ? suffix : null}
+        <Counter to={value} suffix={suffix} decimals={decimals} />
       </div>
       <div className="mt-2 text-[11px] uppercase tracking-wider text-muted-foreground leading-snug">{label}</div>
     </div>
